@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_project_form_inherit_payment_certificate" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.payment.certificate</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_form"/>
+        <field name="arch" type="xml">
+            <header>
+                <button name="action_create_payment_certificate" type="object" string="Create Payment Certificate" class="oe_highlight"/>
+            </header>
+            <sheet>
+                <group>
+                    <field name="payment_certificate_ids" context="{'default_project_id': active_id}">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="delivery_note_id"/>
+                            <field name="amount"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </group>
+            </sheet>
+        </field>
+    </record>
+</odoo>
